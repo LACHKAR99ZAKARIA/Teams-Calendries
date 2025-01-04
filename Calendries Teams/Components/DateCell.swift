@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DateCell: View {
     let date: Date
-    let configuration: CustomDatePicker.Configuration
+    let configuration: DragableDatePicker.Configuration
     
     private var backround: Color {
         date.normalizedDate() == configuration.selection.normalizedDate()

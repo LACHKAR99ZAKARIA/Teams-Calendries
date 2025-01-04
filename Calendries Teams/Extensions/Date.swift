@@ -1,17 +1,11 @@
 //
-//  Extensions.swift
+//  Date.swift
 //  Calendries Teams
 //
-//  Created by Zakaria Lachkar on 3/1/2025.
+//  Created by Zakaria Lachkar on 4/1/2025.
 //
 
 import SwiftUI
-
-extension DatePickerStyle where Self == CustomDatePicker {
-    static func custom(isFull: Binding<Bool>) -> CustomDatePicker {
-        CustomDatePicker(isFull: isFull)
-    }
-}
 
 extension Date {
     var weekday: Int {

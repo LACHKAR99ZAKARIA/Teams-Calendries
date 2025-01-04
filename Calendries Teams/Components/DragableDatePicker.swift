@@ -1,5 +1,5 @@
 //
-//  CustomDatePicker.swift
+//  DragableDatePicker.swift
 //  Calendries Teams
 //
 //  Created by Zakaria Lachkar on 4/1/2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomDatePicker: DatePickerStyle {
+struct DragableDatePicker: DatePickerStyle {
     @Binding var isFull: Bool
     @State private var sizeH: CGFloat = .zero
     
