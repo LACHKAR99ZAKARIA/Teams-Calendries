@@ -1,3 +1,11 @@
+//
+//  ScrollDetectionModifier.swift
+//  Calendries Teams
+//
+//  Created by Zakaria Lachkar on 4/1/2025.
+//
+
+
 import SwiftUI
 
 struct ScrollDetectionModifier: ViewModifier {
@@ -9,7 +17,7 @@ struct ScrollDetectionModifier: ViewModifier {
                 Color.clear
                     .onAppear {
                         let initialOffset = geometry.frame(in: .global).minY
-                        onScroll(initialOffset) // Capture initial position if needed
+                        onScroll(initialOffset)
                     }
                     .onChange(of: geometry.frame(in: .global).minY) { newValue in
                         onScroll(newValue)

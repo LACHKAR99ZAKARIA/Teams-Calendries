@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Calendries_TeamsApp: App {
+    @StateObject private var language = LanguageSetting()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CalendriesView()
+                .environmentObject(language)
         }
     }
 }

@@ -61,14 +61,10 @@ struct CustomDatePicker: DatePickerStyle {
                                     )
                                 }
                             }
+                            scrollToSelection(value, configuration.selection)
                         }
                         .onChange(of: configuration.selection) { selection in
-                            withAnimation {
-                                value.scrollTo(
-                                    selection,
-                                    anchor: .center
-                                )
-                            }
+                            scrollToSelection(value, configuration.selection)
                         }
                         .scrollTargetLayout()
                     }
@@ -115,17 +111,6 @@ struct CustomDatePicker: DatePickerStyle {
                 .ignoresSafeArea()
         )
     }
-    
-//    var daysView: some View {
-//        HStack {
-//            ForEach(days) { day in
-//                Text(day.formattedDay)
-//                    .font(.subheadline)
-//                    .frame(maxWidth: .infinity)
-//                    .padding()
-//            }
-//        }
-//    }
     
     func scrollToSelection(_ value: ScrollViewProxy, _ selection: Date) {
         DispatchQueue.main.async {
