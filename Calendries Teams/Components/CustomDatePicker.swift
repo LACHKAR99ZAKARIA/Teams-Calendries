@@ -53,6 +53,7 @@ struct CustomDatePicker: DatePickerStyle {
                             if !isOn {
                                 sizeH = .zero
                             }
+                            
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
                                 withAnimation {
                                     value.scrollTo(
@@ -61,10 +62,19 @@ struct CustomDatePicker: DatePickerStyle {
                                     )
                                 }
                             }
-                            scrollToSelection(value, configuration.selection)
                         }
                         .onChange(of: configuration.selection) { selection in
                             scrollToSelection(value, configuration.selection)
+                        }
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                withAnimation {
+                                    value.scrollTo(
+                                        configuration.selection.normalizedDate(),
+                                        anchor: .center
+                                    )
+                                }
+                            }
                         }
                         .scrollTargetLayout()
                     }

@@ -34,8 +34,8 @@ extension Date {
         self.formatted(Date.FormatStyle().weekday(type))
     }
     
-    func getMonth(_ type: Date.FormatStyle.Symbol.Weekday = .narrow) -> String {
-        self.formatted(.dateTime.weekday(type))
+    func getMonth(_ type: Date.FormatStyle.Symbol.Month = .narrow) -> String {
+        self.formatted(Date.FormatStyle().month(type))
     }
     
     func normalizedDate() -> Date {

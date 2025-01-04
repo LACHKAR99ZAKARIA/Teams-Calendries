@@ -16,13 +16,13 @@ struct DateCell: View {
         ? Color.blue.opacity(0.4)
         :
         (date.normalizedDate() == Date().normalizedDate()
-           ? Color.gray.opacity(0.3)
+         ? Color.black.opacity(0.3)
            : Color.clear)
     }
 
     var body: some View {
         VStack {
-            Text(date.get(.day) == 1 ? date.getMonth(.short) : "")
+            Text(date.get(.day) == 1 ? date.getMonth(.abbreviated) : "")
                 .font(.caption2)
                 .foregroundStyle(.secondary)
             
@@ -39,7 +39,7 @@ struct DateCell: View {
                     date.normalizedDate() == configuration.selection.normalizedDate()
                     ? Color.blue
                     : Color.clear,
-                    lineWidth: 2
+                    lineWidth: 0
                 )
         )
         .background(
